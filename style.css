@@ -1,0 +1,128 @@
+/* 基本設定 */
+
+/* リセットCSS (ブラウザのデフォルトスタイルを打ち消す) */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* サイト全体の基本設定 */
+
+body {
+    /* フォント設定 */
+
+    font-family: 'Noto Sans JP', sans-serif;
+    /* 日本語フォント: Google Fontsから読み込む必要あり */
+
+    line-height: 1.6;
+    /* 行の高さ: 読みやすさのために設定 */
+    
+    /* 背景色と文字色 */
+
+    background-color: #FFFFFF;
+    /* ベースの背景色: 白 */
+    
+    color: #333333;
+    /* 全体の文字色: ダークグレー */
+
+    margin: 0;
+    padding: 0;
+
+}
+
+/* ヘッダーのスタイル */
+header {
+    background-color: #008080;
+    /* ヘッダー背景色: 深めのエメラルドグリーン */
+
+    color:  #FFFFFF;
+    /* 文字色: 白 */
+
+    padding: 40px 0;
+    /* paddingを上下2倍に増やし、縦幅を広げる */
+
+    width: 100%;
+    /* 横幅を100%に設定（通常はデフォルトで100%ですが、明示的に） */
+
+    box-sizing: border-box;
+    /* paddingを含めてwidthが100%になるようにする */
+    text-align: center;
+}
+
+header h1 {
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+header nav ul {
+    list-style: none;
+    /* リストの点を削除 */
+
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    /* Flexboxを有効にして横並びにする */
+
+    justify-content: center;
+    /* 子要素（li）を中央に配置 */
+
+    gap: 30px;
+    /* 各ナビゲーション項目間のスペースを広げる */
+}
+
+header nav ul li a {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+/* 全体のコンテナ設定（コンテンツの最大幅と中央寄せ） */
+
+main {
+    max-width: 1000px;
+    /* コンテンツの最大幅: 横幅を1000pxに制限 */
+
+    margin: 3em auto 0 auto;
+    /* 上部に3行分の余白、左右は自動で中央寄せ、下は0 */
+
+    padding: 20px;
+    /* 左右にパディングを追加し、コンテンツが端に寄りすぎないようにする */
+
+}
+
+/* フッターのスタイル */
+
+footer {
+    background-color: #008080;
+    /* フッター背景色: 深めのエメラルドグリーン */
+
+    color: #FFFFFF;
+    /* 文字色: 白 */
+
+    text-align: center;
+
+    padding: 4em 0;
+    /* 上下のパディングを2emに設定し、2行分の余白を確保 */
+
+    margin-top: 40px;
+}
+
+footer .social-links a {
+    color: #FFFFFF;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+footer .social-link a:hover {
+    color: #FFD700;
+}
