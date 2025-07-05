@@ -57,6 +57,15 @@ header h1 {
     font-size: 2.5em;
 }
 
+header h1 a {
+    color: #FFFFFF;
+    /* 文字色を白に固定 */
+
+    text-decoration: none;
+    /* 下線をなくす */
+
+}
+
 header nav ul {
     list-style: none;
     /* リストの点を削除 */
@@ -100,6 +109,68 @@ main {
 
 }
 
+ul {
+    list-style: none;
+    padding: 0;
+    /* paddingをリセット、左の余白も調整 */
+}
+
+h2 {
+    text-align: center;
+    /* テキストを中央揃えにする */
+
+    font-family: 'Roboto', sans-serif;
+    /* 見出しフォント設定 */
+
+    color: #008080;
+    /* 見出しカラー: 深めのエメラルドグリーン */
+
+    margin-bottom: 30px;
+    /* 下の余白を少し増やして、コンテンツとの間隔を空ける */
+
+    font-size: 2.2em;
+    /* 必要であればフォントサイズを調整 */
+
+}
+
+section {
+    padding: 3em 0;
+    /* 上下の余白を3emに設定 (約3行分) */
+    /* border-bottom: 1px solid #E0E0E0; */ /* 必要であればセクションの下に区切り線 */
+}
+
+/* 最後のセクションには下線をつけない */
+section:last-of-type {
+    border-bottom: none;
+}
+
+#basic-info ul {
+    list-style: none;
+    /* リストの点を削除 */
+
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    /* Flexboxを有効にする */
+    justify-content: center;
+    /* 子要素を中央揃えにする */
+    flex-wrap: wrap; /* 画面幅が狭い場合に折り返す */
+    gap: 30px; /* 各項目間の隙間 */
+}
+
+#basic-info ul li {
+    white-space: nowrap; /* テキストの折り返しを防ぐ */
+    color: #333333; /* 文字色をダークグレーに設定（背景が白なので） */
+}
+
+/* 基本情報の項目名を強調 */
+#basic-info ul li strong {
+    font-weight: bold;
+    color: #008080; /* 名前などのタイトル部分をエメラルドグリーンに */
+    margin-right: 5px; /* 名前と値の間に少しスペースを空ける */
+}
+
 /* フッターのスタイル */
 
 footer {
@@ -126,3 +197,4 @@ footer .social-links a {
 footer .social-link a:hover {
     color: #FFD700;
 }
+
