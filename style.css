@@ -1,7 +1,6 @@
 /* 基本設定 */
 
 /* リセットCSS (ブラウザのデフォルトスタイルを打ち消す) */
-
 * {
     margin: 0;
     padding: 0;
@@ -9,45 +8,62 @@
 }
 
 /* サイト全体の基本設定 */
-
 body {
     /* フォント設定 */
-
-    font-family: 'Noto Sans JP', sans-serif;
-    /* 日本語フォント: Google Fontsから読み込む必要あり */
-
-    line-height: 1.6;
-    /* 行の高さ: 読みやすさのために設定 */
+    font-family: 'Noto Sans JP', sans-serif; /* 日本語フォント: Google Fontsから読み込む必要あり */
+    line-height: 1.7; /* 行の高さ: 読みやすさのために設定 */
+    font-size: 16px;
     
     /* 背景色と文字色 */
-
-    background-color: #FFFFFF;
-    /* ベースの背景色: 白 */
-    
-    color: #333333;
-    /* 全体の文字色: ダークグレー */
+    background-color: #FFFFFF; /* ベースの背景色: 白 */
+    color: #333333; /* 全体の文字色: ダークグレー */
 
     margin: 0;
     padding: 0;
+}
 
+p {
+    margin-bottom: 1.2em;
+    line-height: 1.7;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    /* paddingをリセット、左の余白も調整 */
+}
+
+h2 {
+    text-align: center; /* テキストを中央揃えにする */
+    font-family: 'Roboto', sans-serif; /* 見出しフォント設定 */
+    color: #008080; /* 見出しカラー: 深めのエメラルドグリーン */
+    margin-bottom: 30px; /* 下の余白を少し増やして、コンテンツとの間隔を空ける */
+    font-size: 2.2em; /* 必要であればフォントサイズを調整 */
+}
+
+/* 共通セクション設定 (section) */
+section {
+    padding: 60px 0;
+    margin: 0 auto;
+    max-width: 1000px;
+    /* 上下に60px、左右は0のパディング */
+    /* 左右のマージンを自動にして中央寄せにするための準備 */
+    /* セクションの最大幅を設定（コンテンツの読みやすさのため） */
+    border-bottom: 1px solid #e0e0e0;
+}
+
+section:last-of-type {
+    border-bottom: none; /* 最後のセクションには下線なし */
+    padding-bottom: 0;
 }
 
 /* ヘッダーのスタイル */
 header {
-    background-color: #008080;
-    /* ヘッダー背景色: 深めのエメラルドグリーン */
-
-    color:  #FFFFFF;
-    /* 文字色: 白 */
-
-    padding: 40px 0;
-    /* paddingを上下2倍に増やし、縦幅を広げる */
-
-    width: 100%;
-    /* 横幅を100%に設定（通常はデフォルトで100%ですが、明示的に） */
-
-    box-sizing: border-box;
-    /* paddingを含めてwidthが100%になるようにする */
+    background-color: #008080; /* ヘッダー背景色: 深めのエメラルドグリーン */
+    color: #FFFFFF; /* 文字色: 白 */
+    padding: 40px 0; /* paddingを上下2倍に増やし、縦幅を広げる */
+    width: 100%; /* 横幅を100%に設定（通常はデフォルトで100%ですが、明示的に） */
+    box-sizing: border-box; /* paddingを含めてwidthが100%になるようにする */
     text-align: center;
 }
 
@@ -58,29 +74,17 @@ header h1 {
 }
 
 header h1 a {
-    color: #FFFFFF;
-    /* 文字色を白に固定 */
-
-    text-decoration: none;
-    /* 下線をなくす */
-
+    color: #FFFFFF; /* 文字色を白に固定 */
+    text-decoration: none; /* 下線をなくす */
 }
 
 header nav ul {
-    list-style: none;
-    /* リストの点を削除 */
-
+    list-style: none; /* リストの点を削除 */
     padding: 0;
     margin: 0;
-
-    display: flex;
-    /* Flexboxを有効にして横並びにする */
-
-    justify-content: center;
-    /* 子要素（li）を中央に配置 */
-
-    gap: 30px;
-    /* 各ナビゲーション項目間のスペースを広げる */
+    display: flex; /* Flexboxを有効にして横並びにする */
+    justify-content: center; /* 子要素（li）を中央に配置 */
+    gap: 30px; /* 各ナビゲーション項目間のスペースを広げる */
 }
 
 header nav ul li a {
@@ -95,66 +99,161 @@ header nav ul li a:hover {
     text-decoration: none;
 }
 
-/* 全体のコンテナ設定（コンテンツの最大幅と中央寄せ） */
-
+/* メインコンテンツのコンテナ (main) */
 main {
-    max-width: 1000px;
-    /* コンテンツの最大幅: 横幅を1000pxに制限 */
-
-    margin: 3em auto 0 auto;
-    /* 上部に3行分の余白、左右は自動で中央寄せ、下は0 */
-
-    padding: 20px;
-    /* 左右にパディングを追加し、コンテンツが端に寄りすぎないようにする */
-
+    max-width: 1000px; /* コンテンツの最大幅: 横幅を1000pxに制限 */
+    margin: 0 auto; /* 上下左右のマージンを0に設定し、左右は自動で中央寄せ */
+    padding: 0 20px; /* 左右にパディングを追加し、コンテンツが端に寄りすぎないようにする */
 }
 
-ul {
+/* トップページ固有のセクション (#hero, .learning-highlight, .future-vision, .cta-buttons) */
+
+.my-motivation {
+    background-color: #fcfcfc;
+    padding: 35px;
+    border-radius: 10px;
+    margin: 100px auto;
+    max-width: 750px;
+    text-align: left;
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.12);
+    border-left: 6px solid #008080;
+}
+
+.my-motivation h3 {
+    font-size: 1.7em;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #00a0a0;
+}
+
+.my-motivation p {
+    font-size: 1em;
+    margin-bottom: 50px;
+    line-height: 1.7;
+    color: #444444;
+}
+
+#hero {
+    padding: 100px 20px;
+    background-color: #f8fcfc;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05); /* 透過度を修正 */
+    margin-bottom: 100px;
+}
+
+#hero .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 25px;
+    line-height: 1.3;
+    color: #006666; /* フル表記で統一 */
+    text-align: center;
+}
+
+#hero p {
+    font-size: 1em;
+    margin-bottom: 50px;
+    color: #555555; /* フル表記で統一 */
+    text-align: left;
+}
+
+#hero h3 {
+    font-size: 1.8em;
+    color: #00a0a0;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.learning-highlight {
+    background-color: #e0f2f1;
+    padding: 35px;
+    border-radius: 10px;
+    margin: 100px auto; /* 左右のマージンを自動に修正 */
+    max-width: 750px;
+    text-align: left;
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.12); /* 透過度を修正 */
+    border-right: 6px solid #008080;
+}
+
+.learning-highlight h3 {
+    font-size: 1.7em;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #00a0a0;
+}
+
+.learning-highlight ul { /* learning-highlight内のulにもスタイルを適用 */
     list-style: none;
     padding: 0;
-    /* paddingをリセット、左の余白も調整 */
+    margin: 0;
+    margin-bottom: 50px;
 }
 
-h2 {
-    text-align: center;
-    /* テキストを中央揃えにする */
+.learning-highlight li {
+    font-size: 1em;
+    margin-bottom: 15px;
+    line-height: 1.7;
+    color: #444444;
+    position: relative;
+    padding-left: 30px;
+}
 
-    font-family: 'Roboto', sans-serif;
-    /* 見出しフォント設定 */
-
+.learning-highlight li::before {
+    content: '✔';
     color: #008080;
-    /* 見出しカラー: 深めのエメラルドグリーン */
-
-    margin-bottom: 30px;
-    /* 下の余白を少し増やして、コンテンツとの間隔を空ける */
-
-    font-size: 2.2em;
-    /* 必要であればフォントサイズを調整 */
-
+    font-size: 1.2em;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
-section {
-    padding: 3em 0;
-    /* 上下の余白を3emに設定 (約3行分) */
-    /* border-bottom: 1px solid #E0E0E0; */ /* 必要であればセクションの下に区切り線 */
+.future-vision {
+    background-color: #fcfcfc;
+    padding: 35px;
+    border-radius: 10px;
+    margin: 100px auto;
+    max-width: 750px;
+    text-align: left;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08); /* 透過度を修正 */
+    border-left: 6px solid #008080;
+    margin-bottom: 0;
 }
 
-/* 最後のセクションには下線をつけない */
-section:last-of-type {
-    border-bottom: none;
+.future-vision h3 {
+    font-size: 1.7em;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #00a0a0;
+}
+
+.future-vision p {
+    font-size: 1em;
+    margin-bottom: 1em;
+    line-height: 1.7;
+    color: #444444;
+}
+
+.cta-buttons {
+    text-align: center;
+}
+
+/* 各ページ固有のセクション (#login, #basic-info, .project-item, #skills .skill-category など) */
+#login {
+    padding: 50px 0;
 }
 
 #basic-info ul {
-    list-style: none;
-    /* リストの点を削除 */
-
+    list-style: none; /* リストの点を削除 */
     padding: 0;
     margin: 0;
-
-    display: flex;
-    /* Flexboxを有効にする */
-    justify-content: center;
-    /* 子要素を中央揃えにする */
+    display: flex; /* Flexboxを有効にする */
+    justify-content: center; /* 子要素を中央揃えにする */
     flex-wrap: wrap; /* 画面幅が狭い場合に折り返す */
     gap: 30px; /* 各項目間の隙間 */
 }
@@ -171,20 +270,108 @@ section:last-of-type {
     margin-right: 5px; /* 名前と値の間に少しスペースを空ける */
 }
 
-/* フッターのスタイル */
+.project-item {
+    background-color: #f8fcfc;
+    padding: 35px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.08); /* 透過度を修正 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-footer {
+.project-item:hover {
+    transform: translateY(-5px); /* translate(-5px) から translateY(-5px) に修正 */
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15); /* 透過度を修正 */
+}
+
+.project-item h3 {
+    font-size: 2em;
+    color: #006666;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #008080;
+    padding-bottom: 10px;
+}
+
+.project-item p {
+    font-size: 1.05em;
+    margin-bottom: 1.5em; /* project-item p の margin-bottom が抜けていたため追加 */
+    color: #444444;
+}
+
+.project-item ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    border-top: 1px dashed #e0e0e0;
+    padding-top: 15px;
+}
+
+.project-item ul li {
+    font-size: 0.95em;
+    margin-bottom: 8px;
+    color: #555555;
+}
+
+.project-item ul li strong {
+    color: #008080;
+    margin-right: 5px;
+}
+
+.project-item a {
+    display: inline-block;
     background-color: #008080;
-    /* フッター背景色: 深めのエメラルドグリーン */
-
     color: #FFFFFF;
-    /* 文字色: 白 */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: background-color 0.3s ease; /* s を追加 */
+}
 
+.project-item a:hover {
+    background-color: #006666;
+}
+
+/* #skills .skill-category のスタイル */
+#skills .skill-category {
+    background-color: #f8fcfc;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #008080;
+}
+
+#skills .skill-category h3 {
+    font-size: 1.8em;
+    color: #006666;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #c0e0e0;
+    padding-bottom: 10px;
+}
+
+#skills .skill-category ul {
+    list-style: disc;
+    margin-left: 25px;
+}
+
+#skills .skill-category li {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #333333;
+}
+
+#skills .skill-category li strong {
+    color: #008080;
+}
+
+/* フッターのスタイル */
+footer {
+    background-color: #008080; /* フッター背景色: 深めのエメラルドグリーン */
+    color: #FFFFFF; /* 文字色: 白 */
     text-align: center;
-
-    padding: 4em 0;
-    /* 上下のパディングを2emに設定し、2行分の余白を確保 */
-
+    padding: 4em 0; /* 上下のパディングを2emに設定し、2行分の余白を確保 */
     margin-top: 40px;
 }
 
@@ -194,7 +381,6 @@ footer .social-links a {
     font-weight: bold;
 }
 
-footer .social-link a:hover {
+footer .social-links a:hover {
     color: #FFD700;
 }
-
